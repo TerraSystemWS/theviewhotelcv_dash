@@ -1,0 +1,15 @@
+name: Automatic Deployment for TheView
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Trigger deployment
+        run: |
+          curl -X POST http://176.31.106.116:3000/api/deploy/49a9b8de0c3097c26e43914412582ca5deb1988015b62fd5
